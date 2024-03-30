@@ -1,5 +1,7 @@
 <html>
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
         <title>Why nuclear energy is not the solution!</title>
         <style>
             h1 {
@@ -49,11 +51,7 @@
                 padding: 20px;
                 margin: 20px;
             }
-            @media (max-width: 768px) {
-                .card {
-                    width: 90vw; /* 90% of the viewport width on smartphone screens */
-                }
-            }
+            
             .card h2 {
                 text-align: center;
             }
@@ -89,9 +87,23 @@
             p {
                 text-align: justify;
             }
-            @media screen and (max-width: 600px) {
+            
+
+            @media (max-width: 768px) {
                 .card {
-                    width: 100vw;
+                    width: 90vw !important;
+                }
+
+                h1 {
+                    font-size: 2em;
+                }
+                .footer {
+                    padding-left: 50px;
+                    padding-right: 50px;
+                    font-size: 0.5em;
+                }
+                .cards {
+                    margin-top: 1vh;
                 }
             }
         </style>
