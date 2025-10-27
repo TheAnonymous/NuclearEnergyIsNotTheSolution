@@ -1,9 +1,54 @@
 <html>
     <head>
+        <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>Nuclear energy is not the solution!</title>
         <style>
+            .language-selector {
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                z-index: 1000;
+                background-color: #FFA737;
+                border: 3px solid #7E5920;
+                border-radius: 8px;
+                padding: 10px 15px;
+                display: flex;
+                gap: 10px;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            }
+            .language-selector button {
+                background-color: #DC851F;
+                border: 2px solid #7E5920;
+                color: #fff;
+                padding: 8px 15px;
+                cursor: pointer;
+                border-radius: 5px;
+                font-weight: bold;
+                transition: all 0.3s;
+                font-size: 14px;
+            }
+            .language-selector button:hover {
+                background-color: #7E5920;
+                transform: scale(1.05);
+            }
+            .language-selector button.active {
+                background-color: #7E5920;
+                box-shadow: inset 0 2px 4px rgba(0,0,0,0.3);
+            }
+            @media (max-width: 768px) {
+                .language-selector {
+                    top: 10px;
+                    right: 10px;
+                    padding: 5px 8px;
+                    gap: 5px;
+                }
+                .language-selector button {
+                    padding: 5px 10px;
+                    font-size: 12px;
+                }
+            }
             h1 {
                 font-size: 4em;
             }
@@ -125,9 +170,15 @@
         </style>
     </head>
     <body>
+        <div class="language-selector">
+            <button onclick="changeLanguage('en')" id="lang-en" class="active">EN</button>
+            <button onclick="changeLanguage('de')" id="lang-de">DE</button>
+            <button onclick="changeLanguage('fr')" id="lang-fr">FR</button>
+            <button onclick="changeLanguage('es')" id="lang-es">ES</button>
+        </div>
         <div class="wrapper">
             <header>
-                <h1>Nuclear energy is not the solution!</h1>
+                <h1 data-i18n="header-title">Nuclear energy is not the solution!</h1>
             </header>
             <div class="cards">
 
@@ -135,8 +186,8 @@
                     <div class="image-card-container">
                         <img src="assets/images/money.png" alt="Nuclear Energy">
                     </div>
-                    <div class="card-header"><h2>❌ Nuclear Energy is cheap </h2></div>
-                    <p>Nuclear energy is often touted as a cheap source of electricity, but this is a myth. In reality, nuclear power is one of the most expensive ways to generate electricity. Here are a few reasons why:
+                    <div class="card-header"><h2 data-i18n="card1-title">❌ Nuclear Energy is cheap </h2></div>
+                    <p data-i18n="card1-content">Nuclear energy is often touted as a cheap source of electricity, but this is a myth. In reality, nuclear power is one of the most expensive ways to generate electricity. Here are a few reasons why:
                         <br><br>
                         <b>High construction costs:</b> Building a nuclear power plant is extremely expensive, often costing billions of dollars. These high upfront costs make nuclear energy less economically viable compared to other energy sources
                         <br><br>
@@ -150,44 +201,44 @@
                         <br><br>
                         In conclusion, while nuclear energy may seem like a cheap option at first glance, the high construction, decommissioning, fuel, and safety costs make it one of the most expensive ways to generate electricity. A 2019 report by the German Institute for Economic Research (DIW) found that nuclear power is the most expensive way to generate electricity when all costs are considered
                         </p>
-                    [<a href="https://www.semanticscholar.org/paper/Looking-for-cheap-and-abundant-power%3A-Business%2C-and-Jensen-Eriksen/81906255fc3da6755fe8a5443b1b0ee5a0b67ce5" class="source-link">Source</a>]
+                    [<a href="https://www.semanticscholar.org/paper/Looking-for-cheap-and-abundant-power%3A-Business%2C-and-Jensen-Eriksen/81906255fc3da6755fe8a5443b1b0ee5a0b67ce5" class="source-link" data-i18n="source">Source</a>]
                 </div>
                 <div class="card">
                     <div class="image-card-container">
                         <img src="assets/images/powerplant.png" alt="Nuclear Energy">
                     </div>
-                    <div class="card-header"><h2>❌ Nuclear Energy is reliable</h2></div>
-                    <p>Nuclear energy is often touted as a reliable source of power, but recent events have shown this to be a myth. In the summer of 2022, France had to shut down many of its nuclear reactors due to a lack of cooling water caused by extreme heat and drought. As a result, France had to import electricity from neighboring countries like Germany to meet its energy needs
+                    <div class="card-header"><h2 data-i18n="card2-title">❌ Nuclear Energy is reliable</h2></div>
+                    <p data-i18n="card2-content">Nuclear energy is often touted as a reliable source of power, but recent events have shown this to be a myth. In the summer of 2022, France had to shut down many of its nuclear reactors due to a lack of cooling water caused by extreme heat and drought. As a result, France had to import electricity from neighboring countries like Germany to meet its energy needs
                         <br><br>
                         This incident highlights the vulnerability of nuclear power plants to climate change and extreme weather events. Nuclear reactors require a constant supply of water for cooling, and when this is disrupted, the reactors must be shut down for safety reasons. This can lead to energy shortages and instability in the power grid.
                         <br><br>
                         Furthermore, the high costs and long construction times of nuclear power plants make them less flexible than other energy sources in responding to changing energy demands</p>
-                    [<a href="https://www.semanticscholar.org/paper/Investigating-the-Potential-of-Nuclear-Energy-in-a-Kr%C5%ABmi%C5%86%C5%A1-K%C4%BCavi%C5%86%C5%A1/d3f91ad7efaa19e1c9b5d3f978c38fe33298d8f0" class="source-link">Source</a>]
+                    [<a href="https://www.semanticscholar.org/paper/Investigating-the-Potential-of-Nuclear-Energy-in-a-Kr%C5%ABmi%C5%86%C5%A1-K%C4%BCavi%C5%86%C5%A1/d3f91ad7efaa19e1c9b5d3f978c38fe33298d8f0" class="source-link" data-i18n="source">Source</a>]
                 </div>
                 <div class="card">
                     <div class="image-card-container">
                         <img src="assets/images/inefficiency.png" alt="Nuclear Energy">
                     </div>
-                    <div class="card-header"><h2>❌ Nuclear Energy is efficient</h2></div>
-                    <p>The efficiency of nuclear reactors in converting heat to electricity is around 33%, which is lower than some other power generation methods
+                    <div class="card-header"><h2 data-i18n="card3-title">❌ Nuclear Energy is efficient</h2></div>
+                    <p data-i18n="card3-content">The efficiency of nuclear reactors in converting heat to electricity is around 33%, which is lower than some other power generation methods
                        This means that a significant amount of energy is lost as waste heat.</p>
-                    [<a href="https://www.semanticscholar.org/paper/A-study-of-the-nuclear-natural-resources-in-open-a-Gon%C3%A7alves-Maiorino/ecdfb26c5598f9b232ca8708a2836c827c078db4" class="source-link">Source</a>]
+                    [<a href="https://www.semanticscholar.org/paper/A-study-of-the-nuclear-natural-resources-in-open-a-Gon%C3%A7alves-Maiorino/ecdfb26c5598f9b232ca8708a2836c827c078db4" class="source-link" data-i18n="source">Source</a>]
 
                 </div>
                 <div class="card">
                     <div class="image-card-container">
                         <img src="assets/images/dependency.png" alt="Nuclear Energy">
                     </div>
-                    <div class="card-header"><h2>❌ Nuclear Energy means energy independence</h2></div>
-                    <p>The myth that nuclear energy means energy independence is wrong for several reasons:
+                    <div class="card-header"><h2 data-i18n="card4-title">❌ Nuclear Energy means energy independence</h2></div>
+                    <p data-i18n="card4-content">The myth that nuclear energy means energy independence is wrong for several reasons:
                         Nuclear fuel is not widely available. Most countries rely on imports of uranium to fuel their reactors, which means they are still dependent on other nations (in Europe this means often Russia or russian allies) for their energy supply
                         <br><br>
                         Nuclear power plants are complex and expensive to build and maintain. Many countries lack the technical expertise and financial resources to develop a domestic nuclear industry, making them reliant on foreign companies and investors
                         <br><br>
                         Nuclear accidents and attacks can disrupt energy supplies. As seen with the attacks on Ukrainian nuclear plants, nuclear facilities are vulnerable targets that can cause widespread damage and disrupt power generation
                         </p>
-                    [<a href="https://www.semanticscholar.org/paper/Global-research-on-nuclear-energy-in-the-context-of-Klingelh%C3%B6fer-Braun/ccafefc3c93cd65c7a944cb182de75d63f13c747" class="source-link">Source 1</a>] 
-                    [<a href="https://www.semanticscholar.org/paper/Research-on-the-Impact-of-Nuclear-Energy-on-the-of-Zhang/24bd65d27107c806a08fcaa7f085f36f40327d57" class="source-link">Source 2</a>]
+                    [<a href="https://www.semanticscholar.org/paper/Global-research-on-nuclear-energy-in-the-context-of-Klingelh%C3%B6fer-Braun/ccafefc3c93cd65c7a944cb182de75d63f13c747" class="source-link" data-i18n="source">Source 1</a>]
+                    [<a href="https://www.semanticscholar.org/paper/Research-on-the-Impact-of-Nuclear-Energy-on-the-of-Zhang/24bd65d27107c806a08fcaa7f085f36f40327d57" class="source-link" data-i18n="source">Source 2</a>]
 
 
                 </div>
@@ -196,8 +247,8 @@
                     <div class="image-card-container">
                         <img src="assets/images/nuclearppattack.png" alt="Nuclear Energy">
                     </div>
-                    <div class="card-header"><h2>❌ Nuclear Energy means security</h2></div>
-                    <p>Nuclear energy is often portrayed as a safe and clean alternative to fossil fuels, but this myth is far from the truth. One of the most significant dangers of nuclear power plants is their vulnerability in times of war. Nuclear facilities can become targets for military strikes, leading to catastrophic consequences
+                    <div class="card-header"><h2 data-i18n="card5-title">❌ Nuclear Energy means security</h2></div>
+                    <p data-i18n="card5-content">Nuclear energy is often portrayed as a safe and clean alternative to fossil fuels, but this myth is far from the truth. One of the most significant dangers of nuclear power plants is their vulnerability in times of war. Nuclear facilities can become targets for military strikes, leading to catastrophic consequences
                         <br><br>
                         In the event of a nuclear plant being hit by a missile or bomb, the damage could cause a meltdown, releasing radioactive material into the environment. This would have devastating effects on human health and the ecosystem for generations to come
                         <br><br>
@@ -205,11 +256,11 @@
                         <br><br> This has led to a dichotomous understanding of the good and bad uses of nuclear energy, with the dangers being downplayed
                         <br><br>
                         The current war in Ukraine has also highlighted the risks of relying on nuclear energy. Countries dependent on nuclear power are now facing energy security concerns, as the conflict threatens the supply of fuel and resources needed to operate these plants
-                        
+
                         </p>
-                    [<a href="https://www.semanticscholar.org/paper/The-Shaping-of-Japanese-Discourse-on-Nuclear-Energy-Choi-Yun/29920977caf7106b83edb2664ba4b384793dd0ff" class="source-link">Source 1</a>] 
-                    [<a href="https://www.semanticscholar.org/paper/Research-on-the-Impact-of-Nuclear-Energy-on-the-of-Zhang/24bd65d27107c806a08fcaa7f085f36f40327d57" class="source-link">Source 2</a>]  
-                    [<a href="https://www.semanticscholar.org/paper/Nuclear-Energy%E2%80%94a-Subject-in-Need-of-Historical-Mazuzan/27f11acffc04505e864e0de123ec97b9dc71f590" class="source-link">Source 3</a>] 
+                    [<a href="https://www.semanticscholar.org/paper/The-Shaping-of-Japanese-Discourse-on-Nuclear-Energy-Choi-Yun/29920977caf7106b83edb2664ba4b384793dd0ff" class="source-link" data-i18n="source">Source 1</a>]
+                    [<a href="https://www.semanticscholar.org/paper/Research-on-the-Impact-of-Nuclear-Energy-on-the-of-Zhang/24bd65d27107c806a08fcaa7f085f36f40327d57" class="source-link" data-i18n="source">Source 2</a>]
+                    [<a href="https://www.semanticscholar.org/paper/Nuclear-Energy%E2%80%94a-Subject-in-Need-of-Historical-Mazuzan/27f11acffc04505e864e0de123ec97b9dc71f590" class="source-link" data-i18n="source">Source 3</a>]
 
                 </div>
 
@@ -218,8 +269,8 @@
                     <div class="image-card-container">
                         <img src="assets/images/radioactive.png" alt="Nuclear Energy">
                     </div>
-                    <div class="card-header"><h2>❌ Nuclear Energy waste is a solved problem</h2></div>
-                    <p>The myth that nuclear waste is a solved problem is incorrect for several reasons:
+                    <div class="card-header"><h2 data-i18n="card6-title">❌ Nuclear Energy waste is a solved problem</h2></div>
+                    <p data-i18n="card6-content">The myth that nuclear waste is a solved problem is incorrect for several reasons:
                         <br><br>
                         <b>Long-term storage challenges:</b> High-level radioactive waste remains hazardous for thousands of years, and finding safe, long-term storage solutions is an ongoing challenge. Even the Waste Isolation Pilot Plant (WIPP), the only underground nuclear waste repository in the US, has experienced accidents that led to radiological releases and contamination
                         <br><br>
@@ -232,11 +283,11 @@
                         <b>Myth of safe disposal:</b> The idea that high-level radioactive waste can be easily and safely disposed of is a myth. The hazards associated with this waste persist for incredibly long periods, and there is no guarantee that current storage methods will remain secure indefinitely
                         <br><br>
                         In conclusion, while progress has been made in nuclear waste management, it is inaccurate to claim that the problem is solved. Significant challenges related to long-term storage, public acceptance, proliferation risks, and the development of advanced recycling technologies still need to be addressed.</p>
-                    [<a href="https://www.semanticscholar.org/paper/What-really-went-wrong-at-WIPP%3A-An-insider%E2%80%99s-view-Klaus/df3922dbf147b25765d7f179430aa303efecf2b4" class="source-link">Source 1</a>] 
-                    [<a href="https://www.semanticscholar.org/paper/A-Zero-Carbon-Nuclear-Energy-Future-Lessons-Learned-Dehner-McBeth/70128589d1ca791ef1dc88f2d6cc9cda5a5a3afe" class="source-link">Source 2</a>] 
-                    [<a href="https://www.semanticscholar.org/paper/Nuclear-Energy%3A-A-Sensible-Alternative-Ott-Spinrad/9838ab1d735512772a243d7dd31e73bceca595f5" class="source-link">Source 3</a>] 
-                    [<a href="https://www.semanticscholar.org/paper/Hazards-of-High-Level-Radioactive-Waste-the-Great-Cohen/7e14d00759a662fce5343742cc92b1452351c1dc" class="source-link">Source 4</a>] 
-                    [<a href="https://www.semanticscholar.org/paper/Advancing-Nuclear-Energy%3A-Generation-IV-and-Small-%26-Zohuri/2992f1edc8558d06bd951caef28e4cc18d421681" class="source-link">Source 5</a>]  
+                    [<a href="https://www.semanticscholar.org/paper/What-really-went-wrong-at-WIPP%3A-An-insider%E2%80%99s-view-Klaus/df3922dbf147b25765d7f179430aa303efecf2b4" class="source-link" data-i18n="source">Source 1</a>]
+                    [<a href="https://www.semanticscholar.org/paper/A-Zero-Carbon-Nuclear-Energy-Future-Lessons-Learned-Dehner-McBeth/70128589d1ca791ef1dc88f2d6cc9cda5a5a3afe" class="source-link" data-i18n="source">Source 2</a>]
+                    [<a href="https://www.semanticscholar.org/paper/Nuclear-Energy%3A-A-Sensible-Alternative-Ott-Spinrad/9838ab1d735512772a243d7dd31e73bceca595f5" class="source-link" data-i18n="source">Source 3</a>]
+                    [<a href="https://www.semanticscholar.org/paper/Hazards-of-High-Level-Radioactive-Waste-the-Great-Cohen/7e14d00759a662fce5343742cc92b1452351c1dc" class="source-link" data-i18n="source">Source 4</a>]
+                    [<a href="https://www.semanticscholar.org/paper/Advancing-Nuclear-Energy%3A-Generation-IV-and-Small-%26-Zohuri/2992f1edc8558d06bd951caef28e4cc18d421681" class="source-link" data-i18n="source">Source 5</a>]
                 </div>
 
                                 
@@ -244,8 +295,8 @@
                     <div class="image-card-container">
                         <img src="assets/images/smr.webp" alt="Nuclear Energy">
                     </div>
-                    <div class="card-header"><h2>❌ Small reactors are the solution</h2></div>
-                    <p>Tiny nuclear reactors, also known as small modular reactors (SMRs), have been proposed as a potential solution for clean energy generation. However, they face several challenges that make them unlikely to be a viable solution in the near term:
+                    <div class="card-header"><h2 data-i18n="card7-title">❌ Small reactors are the solution</h2></div>
+                    <p data-i18n="card7-content">Tiny nuclear reactors, also known as small modular reactors (SMRs), have been proposed as a potential solution for clean energy generation. However, they face several challenges that make them unlikely to be a viable solution in the near term:
                         <br><br>
                         <b>High costs:</b> Despite their smaller size, SMRs still require significant upfront capital costs for development, licensing, and construction. The economies of scale that benefit larger reactors are not as applicable to SMRs, making them relatively more expensive per unit of energy produced
                         <br><br>
@@ -256,18 +307,129 @@
                         <b>Competition from renewables:</b> In the time it takes to develop and deploy SMRs at scale, renewable energy technologies like solar and wind are becoming increasingly cost-competitive and widespread. Renewables have the advantage of faster deployment times, lower perceived risks, and greater public acceptance
                         <br><br>
                         While SMRs offer some potential benefits, they face significant economic, regulatory, and public perception challenges that make them unlikely to be a major climate solution in the near-term compared to the rapid scaling of renewable energy technologies.</p>
-                    [<a href="https://www.semanticscholar.org/paper/Nuclear-Solutions%3A-The-U.S.-Government-Has-Failed-a-Williams/c17402943c11edd8df347987f05bd7da95ceb469" class="source-link">Source</a>]
-                        
+                    [<a href="https://www.semanticscholar.org/paper/Nuclear-Solutions%3A-The-U.S.-Government-Has-Failed-a-Williams/c17402943c11edd8df347987f05bd7da95ceb469" class="source-link" data-i18n="source">Source</a>]
+
                 </div>
             </div>
             <div class="footer">
-                <p>  Made by <a href="https://github.com/TheAnonymous">Jakob Oesterling</a> | <i> You're welcome to make a fork, changes and a merge request. Or open an issue, if you find that some of these texts are wrong.</i></p>
+                <p><span data-i18n="footer-made-by">Made by</span> <a href="https://github.com/TheAnonymous">Jakob Oesterling</a> | <i data-i18n="footer-contribute">You're welcome to make a fork, changes and a merge request. Or open an issue, if you find that some of these texts are wrong.</i></p>
             </div>
         </div>
-    </body>
-</html>
+        <script>
+            // Translation data
+            const translations = {
+                en: {
+                    "header-title": "Nuclear energy is not the solution!",
+                    "card1-title": "❌ Nuclear Energy is cheap",
+                    "card1-content": "Nuclear energy is often touted as a cheap source of electricity, but this is a myth. In reality, nuclear power is one of the most expensive ways to generate electricity. Here are a few reasons why:<br><br><b>High construction costs:</b> Building a nuclear power plant is extremely expensive, often costing billions of dollars. These high upfront costs make nuclear energy less economically viable compared to other energy sources<br><br><b>Long construction times:</b> Nuclear reactors take a long time to build, often over a decade. This means that the cost of financing the project adds up over time, making the final cost even higher<br><br><b>Decommissioning costs:</b> When a nuclear power plant reaches the end of its life, it needs to be decommissioned. This process is also very expensive and can cost hundreds of millions of dollars<br><br><b>Fuel costs:</b> While uranium fuel is relatively cheap compared to fossil fuels, the process of enriching and fabricating the fuel is expensive<br><br><b>Safety and security costs:</b> Nuclear power plants require high levels of safety and security, which add to the overall cost of operating the plant<br><br>In conclusion, while nuclear energy may seem like a cheap option at first glance, the high construction, decommissioning, fuel, and safety costs make it one of the most expensive ways to generate electricity. A 2019 report by the German Institute for Economic Research (DIW) found that nuclear power is the most expensive way to generate electricity when all costs are considered",
+                    "card2-title": "❌ Nuclear Energy is reliable",
+                    "card2-content": "Nuclear energy is often touted as a reliable source of power, but recent events have shown this to be a myth. In the summer of 2022, France had to shut down many of its nuclear reactors due to a lack of cooling water caused by extreme heat and drought. As a result, France had to import electricity from neighboring countries like Germany to meet its energy needs<br><br>This incident highlights the vulnerability of nuclear power plants to climate change and extreme weather events. Nuclear reactors require a constant supply of water for cooling, and when this is disrupted, the reactors must be shut down for safety reasons. This can lead to energy shortages and instability in the power grid.<br><br>Furthermore, the high costs and long construction times of nuclear power plants make them less flexible than other energy sources in responding to changing energy demands",
+                    "card3-title": "❌ Nuclear Energy is efficient",
+                    "card3-content": "The efficiency of nuclear reactors in converting heat to electricity is around 33%, which is lower than some other power generation methods<br>This means that a significant amount of energy is lost as waste heat.",
+                    "card4-title": "❌ Nuclear Energy means energy independence",
+                    "card4-content": "The myth that nuclear energy means energy independence is wrong for several reasons:<br>Nuclear fuel is not widely available. Most countries rely on imports of uranium to fuel their reactors, which means they are still dependent on other nations (in Europe this means often Russia or russian allies) for their energy supply<br><br>Nuclear power plants are complex and expensive to build and maintain. Many countries lack the technical expertise and financial resources to develop a domestic nuclear industry, making them reliant on foreign companies and investors<br><br>Nuclear accidents and attacks can disrupt energy supplies. As seen with the attacks on Ukrainian nuclear plants, nuclear facilities are vulnerable targets that can cause widespread damage and disrupt power generation",
+                    "card5-title": "❌ Nuclear Energy means security",
+                    "card5-content": "Nuclear energy is often portrayed as a safe and clean alternative to fossil fuels, but this myth is far from the truth. One of the most significant dangers of nuclear power plants is their vulnerability in times of war. Nuclear facilities can become targets for military strikes, leading to catastrophic consequences<br><br>In the event of a nuclear plant being hit by a missile or bomb, the damage could cause a meltdown, releasing radioactive material into the environment. This would have devastating effects on human health and the ecosystem for generations to come<br><br>Moreover, the myth of nuclear safety has been perpetuated since the early days of nuclear technology. Governments have often hidden their intentions to develop nuclear weapons while promoting the \"peaceful use of nuclear power\"<br><br>This has led to a dichotomous understanding of the good and bad uses of nuclear energy, with the dangers being downplayed<br><br>The current war in Ukraine has also highlighted the risks of relying on nuclear energy. Countries dependent on nuclear power are now facing energy security concerns, as the conflict threatens the supply of fuel and resources needed to operate these plants",
+                    "card6-title": "❌ Nuclear Energy waste is a solved problem",
+                    "card6-content": "The myth that nuclear waste is a solved problem is incorrect for several reasons:<br><br><b>Long-term storage challenges:</b> High-level radioactive waste remains hazardous for thousands of years, and finding safe, long-term storage solutions is an ongoing challenge. Even the Waste Isolation Pilot Plant (WIPP), the only underground nuclear waste repository in the US, has experienced accidents that led to radiological releases and contamination<br><br><b>Public perception and acceptance:</b> Despite some progress in nuclear waste management, public concern about pollution and environmental contamination from nuclear power remains high. A study found that while many people perceive nuclear energy as a potential solution to climate change, they are still worried about the risks associated with nuclear waste<br><br><b>Proliferation risks:</b> The presence of nuclear waste raises concerns about the potential for nuclear weapons proliferation. Ensuring reliable safeguards and preventing the creation of homemade bombs using nuclear waste materials is an ongoing challenge<br><br><b>Incomplete recycling solutions:</b> While advancements in Generation-IV reactors and Small Modular Reactors (SMRs) show promise for improving nuclear waste management and recycling, these technologies are still in development and not yet widely implemented<br><br><b>Myth of safe disposal:</b> The idea that high-level radioactive waste can be easily and safely disposed of is a myth. The hazards associated with this waste persist for incredibly long periods, and there is no guarantee that current storage methods will remain secure indefinitely<br><br>In conclusion, while progress has been made in nuclear waste management, it is inaccurate to claim that the problem is solved. Significant challenges related to long-term storage, public acceptance, proliferation risks, and the development of advanced recycling technologies still need to be addressed.",
+                    "card7-title": "❌ Small reactors are the solution",
+                    "card7-content": "Tiny nuclear reactors, also known as small modular reactors (SMRs), have been proposed as a potential solution for clean energy generation. However, they face several challenges that make them unlikely to be a viable solution in the near term:<br><br><b>High costs:</b> Despite their smaller size, SMRs still require significant upfront capital costs for development, licensing, and construction. The economies of scale that benefit larger reactors are not as applicable to SMRs, making them relatively more expensive per unit of energy produced<br><br><b>Safety concerns:</b> While SMRs incorporate advanced safety features, the nuclear industry still faces public perception challenges around safety and waste disposal. Any accidents or safety incidents, even at a smaller scale, could setback public acceptance of nuclear power<br><br><b>Regulatory hurdles:</b> SMRs would need to go through extensive licensing and regulatory approvals before they can be widely deployed. The current regulatory framework is geared towards larger, traditional reactor designs, and adapting it for SMRs could be a lengthy and complex process<br><br><b>Competition from renewables:</b> In the time it takes to develop and deploy SMRs at scale, renewable energy technologies like solar and wind are becoming increasingly cost-competitive and widespread. Renewables have the advantage of faster deployment times, lower perceived risks, and greater public acceptance<br><br>While SMRs offer some potential benefits, they face significant economic, regulatory, and public perception challenges that make them unlikely to be a major climate solution in the near-term compared to the rapid scaling of renewable energy technologies.",
+                    "source": "Source",
+                    "footer-made-by": "Made by",
+                    "footer-contribute": "You're welcome to make a fork, changes and a merge request. Or open an issue, if you find that some of these texts are wrong."
+                },
+                de: {
+                    "header-title": "Kernenergie ist nicht die Lösung!",
+                    "card1-title": "❌ Kernenergie ist günstig",
+                    "card1-content": "Kernenergie wird oft als günstige Stromquelle angepriesen, aber das ist ein Mythos. In Wirklichkeit ist Atomkraft eine der teuersten Methoden zur Stromerzeugung. Hier sind einige Gründe dafür:<br><br><b>Hohe Baukosten:</b> Der Bau eines Kernkraftwerks ist extrem teuer und kostet oft Milliarden von Dollar. Diese hohen Anfangskosten machen Kernenergie im Vergleich zu anderen Energiequellen wirtschaftlich weniger rentabel<br><br><b>Lange Bauzeiten:</b> Der Bau von Kernreaktoren dauert sehr lange, oft über ein Jahrzehnt. Das bedeutet, dass sich die Finanzierungskosten im Laufe der Zeit summieren und die Endkosten noch höher werden<br><br><b>Stilllegungskosten:</b> Wenn ein Kernkraftwerk das Ende seiner Lebensdauer erreicht, muss es stillgelegt werden. Dieser Prozess ist ebenfalls sehr teuer und kann Hunderte Millionen Dollar kosten<br><br><b>Brennstoffkosten:</b> Während Uranbrennstoff im Vergleich zu fossilen Brennstoffen relativ günstig ist, ist der Prozess der Anreicherung und Herstellung des Brennstoffs teuer<br><br><b>Sicherheits- und Schutzkosten:</b> Kernkraftwerke erfordern hohe Sicherheits- und Schutzstandards, die die Gesamtkosten des Betriebs erhöhen<br><br>Zusammenfassend lässt sich sagen, dass Kernenergie auf den ersten Blick günstig erscheinen mag, aber die hohen Bau-, Stilllegungs-, Brennstoff- und Sicherheitskosten sie zu einer der teuersten Methoden der Stromerzeugung machen. Ein Bericht des Deutschen Instituts für Wirtschaftsforschung (DIW) aus dem Jahr 2019 ergab, dass Atomstrom die teuerste Art der Stromerzeugung ist, wenn alle Kosten berücksichtigt werden",
+                    "card2-title": "❌ Kernenergie ist zuverlässig",
+                    "card2-content": "Kernenergie wird oft als zuverlässige Energiequelle angepriesen, aber jüngste Ereignisse haben gezeigt, dass dies ein Mythos ist. Im Sommer 2022 musste Frankreich viele seiner Kernreaktoren aufgrund von Kühlwassermangel durch extreme Hitze und Dürre abschalten. Infolgedessen musste Frankreich Strom aus Nachbarländern wie Deutschland importieren, um seinen Energiebedarf zu decken<br><br>Dieser Vorfall zeigt die Anfälligkeit von Kernkraftwerken gegenüber Klimawandel und extremen Wetterereignissen. Kernreaktoren benötigen eine konstante Wasserzufuhr zur Kühlung, und wenn diese unterbrochen wird, müssen die Reaktoren aus Sicherheitsgründen abgeschaltet werden. Dies kann zu Energieengpässen und Instabilität im Stromnetz führen.<br><br>Darüber hinaus machen die hohen Kosten und langen Bauzeiten von Kernkraftwerken sie weniger flexibel als andere Energiequellen bei der Reaktion auf sich ändernde Energieanforderungen",
+                    "card3-title": "❌ Kernenergie ist effizient",
+                    "card3-content": "Der Wirkungsgrad von Kernreaktoren bei der Umwandlung von Wärme in Strom liegt bei etwa 33%, was niedriger ist als bei einigen anderen Stromerzeugungsmethoden<br>Das bedeutet, dass eine erhebliche Menge an Energie als Abwärme verloren geht.",
+                    "card4-title": "❌ Kernenergie bedeutet Energieunabhängigkeit",
+                    "card4-content": "Der Mythos, dass Kernenergie Energieunabhängigkeit bedeutet, ist aus mehreren Gründen falsch:<br>Nuklearbrennstoff ist nicht weit verbreitet. Die meisten Länder sind auf Uran-Importe angewiesen, um ihre Reaktoren zu betreiben, was bedeutet, dass sie immer noch von anderen Nationen (in Europa bedeutet dies oft Russland oder russische Verbündete) für ihre Energieversorgung abhängig sind<br><br>Kernkraftwerke sind komplex und teuer zu bauen und zu warten. Vielen Ländern fehlen das technische Know-how und die finanziellen Ressourcen, um eine heimische Atomindustrie aufzubauen, was sie auf ausländische Unternehmen und Investoren angewiesen macht<br><br>Atomunfälle und Angriffe können die Energieversorgung stören. Wie bei den Angriffen auf ukrainische Atomkraftwerke zu sehen war, sind nukleare Anlagen anfällige Ziele, die weitreichende Schäden verursachen und die Stromerzeugung stören können",
+                    "card5-title": "❌ Kernenergie bedeutet Sicherheit",
+                    "card5-content": "Kernenergie wird oft als sichere und saubere Alternative zu fossilen Brennstoffen dargestellt, aber dieser Mythos ist weit von der Wahrheit entfernt. Eine der größten Gefahren von Kernkraftwerken ist ihre Anfälligkeit in Kriegszeiten. Nukleare Anlagen können zu Zielen für Militärschläge werden, was zu katastrophalen Folgen führt<br><br>Im Falle eines Angriffs auf ein Kernkraftwerk durch Raketen oder Bomben könnte der Schaden eine Kernschmelze verursachen und radioaktives Material in die Umwelt freisetzen. Dies hätte verheerende Auswirkungen auf die menschliche Gesundheit und das Ökosystem für kommende Generationen<br><br>Darüber hinaus wurde der Mythos der nuklearen Sicherheit seit den Anfängen der Nukleartechnologie aufrechterhalten. Regierungen haben oft ihre Absichten, Atomwaffen zu entwickeln, verschleiert, während sie die \"friedliche Nutzung der Kernenergie\" propagierten<br><br>Dies hat zu einem dichotomen Verständnis der guten und schlechten Verwendungen von Kernenergie geführt, wobei die Gefahren heruntergespielt wurden<br><br>Der aktuelle Krieg in der Ukraine hat auch die Risiken der Abhängigkeit von Kernenergie verdeutlicht. Länder, die auf Atomkraft angewiesen sind, sehen sich nun Energiesicherheitsbedenken ausgesetzt, da der Konflikt die Versorgung mit Brennstoff und Ressourcen bedroht, die für den Betrieb dieser Anlagen benötigt werden",
+                    "card6-title": "❌ Atommüll ist ein gelöstes Problem",
+                    "card6-content": "Der Mythos, dass Atommüll ein gelöstes Problem ist, ist aus mehreren Gründen falsch:<br><br><b>Langfristige Lagerungsprobleme:</b> Hochradioaktiver Abfall bleibt Tausende von Jahren gefährlich, und die Suche nach sicheren, langfristigen Lagerlösungen ist eine anhaltende Herausforderung. Selbst die Waste Isolation Pilot Plant (WIPP), das einzige unterirdische Atommüllendlager in den USA, hat Unfälle erlebt, die zu radiologischen Freisetzungen und Kontaminationen führten<br><br><b>Öffentliche Wahrnehmung und Akzeptanz:</b> Trotz einiger Fortschritte bei der Entsorgung von Atommüll bleibt die öffentliche Besorgnis über Umweltverschmutzung und Kontamination durch Kernenergie hoch. Eine Studie ergab, dass viele Menschen Kernenergie zwar als potenzielle Lösung für den Klimawandel wahrnehmen, aber dennoch besorgt über die mit Atommüll verbundenen Risiken sind<br><br><b>Proliferationsrisiken:</b> Das Vorhandensein von Atommüll weckt Bedenken hinsichtlich der Verbreitung von Atomwaffen. Die Gewährleistung zuverlässiger Sicherheitsvorkehrungen und die Verhinderung der Herstellung selbstgemachter Bomben aus Atommüll-Materialien ist eine fortlaufende Herausforderung<br><br><b>Unvollständige Recyclinglösungen:</b> Während Fortschritte bei Generation-IV-Reaktoren und Small Modular Reactors (SMRs) vielversprechend für die Verbesserung der Atommüllentsorgung und des Recyclings sind, befinden sich diese Technologien noch in der Entwicklung und sind noch nicht weit verbreitet<br><br><b>Mythos der sicheren Entsorgung:</b> Die Vorstellung, dass hochradioaktiver Abfall einfach und sicher entsorgt werden kann, ist ein Mythos. Die mit diesem Abfall verbundenen Gefahren bestehen über unglaublich lange Zeiträume fort, und es gibt keine Garantie, dass die derzeitigen Lagermethoden auf unbestimmte Zeit sicher bleiben<br><br>Zusammenfassend lässt sich sagen, dass es zwar Fortschritte bei der Entsorgung von Atommüll gegeben hat, es aber ungenau ist zu behaupten, dass das Problem gelöst ist. Erhebliche Herausforderungen im Zusammenhang mit Langzeitlagerung, öffentlicher Akzeptanz, Proliferationsrisiken und der Entwicklung fortschrittlicher Recyclingtechnologien müssen noch angegangen werden.",
+                    "card7-title": "❌ Kleine Reaktoren sind die Lösung",
+                    "card7-content": "Kleine Kernreaktoren, auch bekannt als Small Modular Reactors (SMRs), wurden als potenzielle Lösung für die saubere Energieerzeugung vorgeschlagen. Sie stehen jedoch vor mehreren Herausforderungen, die sie kurzfristig zu einer unwahrscheinlichen Lösung machen:<br><br><b>Hohe Kosten:</b> Trotz ihrer geringeren Größe erfordern SMRs immer noch erhebliche Kapitalkosten für Entwicklung, Lizenzierung und Bau. Die Skaleneffekte, die größeren Reaktoren zugutekommen, sind nicht so sehr auf SMRs anwendbar, was sie pro erzeugter Energieeinheit relativ teurer macht<br><br><b>Sicherheitsbedenken:</b> Während SMRs fortschrittliche Sicherheitsmerkmale integrieren, steht die Atomindustrie immer noch vor Herausforderungen in der öffentlichen Wahrnehmung bezüglich Sicherheit und Abfallentsorgung. Jegliche Unfälle oder Sicherheitsvorfälle, selbst im kleineren Maßstab, könnten die öffentliche Akzeptanz der Kernenergie zurückwerfen<br><br><b>Regulatorische Hürden:</b> SMRs müssten umfangreiche Lizenzierungs- und behördliche Genehmigungen durchlaufen, bevor sie weitreichend eingesetzt werden können. Der aktuelle regulatorische Rahmen ist auf größere, traditionelle Reaktordesigns ausgerichtet, und die Anpassung für SMRs könnte ein langwieriger und komplexer Prozess sein<br><br><b>Konkurrenz durch erneuerbare Energien:</b> In der Zeit, die es braucht, um SMRs im großen Maßstab zu entwickeln und einzusetzen, werden erneuerbare Energietechnologien wie Solar- und Windenergie zunehmend kostenwettbewerbsfähig und weit verbreitet. Erneuerbare Energien haben den Vorteil schnellerer Einsatzzeiten, geringerer wahrgenommener Risiken und größerer öffentlicher Akzeptanz<br><br>Während SMRs einige potenzielle Vorteile bieten, stehen sie vor erheblichen wirtschaftlichen, regulatorischen und öffentlichen Wahrnehmungsherausforderungen, die sie im Vergleich zur raschen Skalierung erneuerbarer Energietechnologien kurzfristig zu einer unwahrscheinlichen Klimalösung machen.",
+                    "source": "Quelle",
+                    "footer-made-by": "Erstellt von",
+                    "footer-contribute": "Sie können gerne einen Fork, Änderungen und eine Merge-Anfrage erstellen. Oder öffnen Sie ein Issue, wenn Sie feststellen, dass einige dieser Texte falsch sind."
+                },
+                fr: {
+                    "header-title": "L'énergie nucléaire n'est pas la solution!",
+                    "card1-title": "❌ L'énergie nucléaire est bon marché",
+                    "card1-content": "L'énergie nucléaire est souvent présentée comme une source d'électricité bon marché, mais c'est un mythe. En réalité, l'énergie nucléaire est l'un des moyens les plus coûteux de produire de l'électricité. Voici quelques raisons:<br><br><b>Coûts de construction élevés:</b> La construction d'une centrale nucléaire est extrêmement coûteuse, coûtant souvent des milliards de dollars. Ces coûts initiaux élevés rendent l'énergie nucléaire moins viable économiquement par rapport à d'autres sources d'énergie<br><br><b>Temps de construction longs:</b> Les réacteurs nucléaires prennent beaucoup de temps à construire, souvent plus d'une décennie. Cela signifie que le coût du financement du projet s'accumule au fil du temps, rendant le coût final encore plus élevé<br><br><b>Coûts de démantèlement:</b> Lorsqu'une centrale nucléaire atteint la fin de sa durée de vie, elle doit être démantelée. Ce processus est également très coûteux et peut coûter des centaines de millions de dollars<br><br><b>Coûts du combustible:</b> Bien que le combustible d'uranium soit relativement bon marché par rapport aux combustibles fossiles, le processus d'enrichissement et de fabrication du combustible est coûteux<br><br><b>Coûts de sûreté et de sécurité:</b> Les centrales nucléaires nécessitent des niveaux élevés de sûreté et de sécurité, ce qui ajoute au coût global d'exploitation de la centrale<br><br>En conclusion, bien que l'énergie nucléaire puisse sembler une option bon marché à première vue, les coûts élevés de construction, de démantèlement, de combustible et de sécurité en font l'un des moyens les plus coûteux de produire de l'électricité. Un rapport de 2019 de l'Institut allemand de recherche économique (DIW) a constaté que l'énergie nucléaire est le moyen le plus coûteux de produire de l'électricité lorsque tous les coûts sont pris en compte",
+                    "card2-title": "❌ L'énergie nucléaire est fiable",
+                    "card2-content": "L'énergie nucléaire est souvent présentée comme une source d'énergie fiable, mais des événements récents ont montré que c'est un mythe. À l'été 2022, la France a dû fermer de nombreux réacteurs nucléaires en raison d'un manque d'eau de refroidissement causé par la chaleur extrême et la sécheresse. En conséquence, la France a dû importer de l'électricité de pays voisins comme l'Allemagne pour répondre à ses besoins énergétiques<br><br>Cet incident met en évidence la vulnérabilité des centrales nucléaires au changement climatique et aux événements météorologiques extrêmes. Les réacteurs nucléaires nécessitent un approvisionnement constant en eau pour le refroidissement, et lorsque cela est perturbé, les réacteurs doivent être arrêtés pour des raisons de sécurité. Cela peut entraîner des pénuries d'énergie et une instabilité du réseau électrique.<br><br>De plus, les coûts élevés et les longs délais de construction des centrales nucléaires les rendent moins flexibles que d'autres sources d'énergie pour répondre aux demandes énergétiques changeantes",
+                    "card3-title": "❌ L'énergie nucléaire est efficace",
+                    "card3-content": "L'efficacité des réacteurs nucléaires dans la conversion de la chaleur en électricité est d'environ 33%, ce qui est inférieur à certaines autres méthodes de production d'énergie<br>Cela signifie qu'une quantité importante d'énergie est perdue sous forme de chaleur résiduelle.",
+                    "card4-title": "❌ L'énergie nucléaire signifie l'indépendance énergétique",
+                    "card4-content": "Le mythe selon lequel l'énergie nucléaire signifie l'indépendance énergétique est faux pour plusieurs raisons:<br>Le combustible nucléaire n'est pas largement disponible. La plupart des pays dépendent des importations d'uranium pour alimenter leurs réacteurs, ce qui signifie qu'ils dépendent toujours d'autres nations (en Europe, cela signifie souvent la Russie ou les alliés russes) pour leur approvisionnement énergétique<br><br>Les centrales nucléaires sont complexes et coûteuses à construire et à entretenir. De nombreux pays manquent de l'expertise technique et des ressources financières nécessaires pour développer une industrie nucléaire nationale, ce qui les rend dépendants d'entreprises et d'investisseurs étrangers<br><br>Les accidents et les attaques nucléaires peuvent perturber les approvisionnements énergétiques. Comme on l'a vu avec les attaques contre les centrales nucléaires ukrainiennes, les installations nucléaires sont des cibles vulnérables qui peuvent causer des dommages considérables et perturber la production d'électricité",
+                    "card5-title": "❌ L'énergie nucléaire signifie sécurité",
+                    "card5-content": "L'énergie nucléaire est souvent présentée comme une alternative sûre et propre aux combustibles fossiles, mais ce mythe est loin de la vérité. L'un des dangers les plus importants des centrales nucléaires est leur vulnérabilité en temps de guerre. Les installations nucléaires peuvent devenir des cibles de frappes militaires, entraînant des conséquences catastrophiques<br><br>En cas d'attaque d'une centrale nucléaire par un missile ou une bombe, les dégâts pourraient provoquer une fusion, libérant des matières radioactives dans l'environnement. Cela aurait des effets dévastateurs sur la santé humaine et l'écosystème pour les générations à venir<br><br>De plus, le mythe de la sécurité nucléaire a été perpétué depuis les débuts de la technologie nucléaire. Les gouvernements ont souvent caché leurs intentions de développer des armes nucléaires tout en promouvant \"l'utilisation pacifique de l'énergie nucléaire\"<br><br>Cela a conduit à une compréhension dichotomique des bonnes et mauvaises utilisations de l'énergie nucléaire, les dangers étant minimisés<br><br>La guerre actuelle en Ukraine a également mis en évidence les risques de la dépendance à l'énergie nucléaire. Les pays dépendant de l'énergie nucléaire sont maintenant confrontés à des préoccupations en matière de sécurité énergétique, car le conflit menace l'approvisionnement en combustible et en ressources nécessaires au fonctionnement de ces centrales",
+                    "card6-title": "❌ Les déchets nucléaires sont un problème résolu",
+                    "card6-content": "Le mythe selon lequel les déchets nucléaires sont un problème résolu est incorrect pour plusieurs raisons:<br><br><b>Défis de stockage à long terme:</b> Les déchets radioactifs de haute activité restent dangereux pendant des milliers d'années, et trouver des solutions de stockage sûres à long terme est un défi continu. Même le Waste Isolation Pilot Plant (WIPP), le seul dépôt de déchets nucléaires souterrain aux États-Unis, a connu des accidents qui ont conduit à des rejets radiologiques et à une contamination<br><br><b>Perception et acceptation du public:</b> Malgré certains progrès dans la gestion des déchets nucléaires, les préoccupations du public concernant la pollution et la contamination environnementale par l'énergie nucléaire restent élevées. Une étude a révélé que bien que de nombreuses personnes perçoivent l'énergie nucléaire comme une solution potentielle au changement climatique, elles sont toujours préoccupées par les risques associés aux déchets nucléaires<br><br><b>Risques de prolifération:</b> La présence de déchets nucléaires soulève des préoccupations concernant le potentiel de prolifération des armes nucléaires. Assurer des garanties fiables et prévenir la création de bombes artisanales à partir de matériaux de déchets nucléaires est un défi continu<br><br><b>Solutions de recyclage incomplètes:</b> Bien que les progrès dans les réacteurs de génération IV et les petits réacteurs modulaires (SMR) montrent des promesses pour améliorer la gestion et le recyclage des déchets nucléaires, ces technologies sont encore en développement et pas encore largement mises en œuvre<br><br><b>Mythe de l'élimination sûre:</b> L'idée que les déchets radioactifs de haute activité peuvent être facilement et en toute sécurité éliminés est un mythe. Les dangers associés à ces déchets persistent pendant des périodes incroyablement longues, et il n'y a aucune garantie que les méthodes de stockage actuelles resteront sûres indéfiniment<br><br>En conclusion, bien que des progrès aient été réalisés dans la gestion des déchets nucléaires, il est inexact de prétendre que le problème est résolu. Des défis importants liés au stockage à long terme, à l'acceptation du public, aux risques de prolifération et au développement de technologies de recyclage avancées doivent encore être relevés.",
+                    "card7-title": "❌ Les petits réacteurs sont la solution",
+                    "card7-content": "Les petits réacteurs nucléaires, également connus sous le nom de petits réacteurs modulaires (SMR), ont été proposés comme une solution potentielle pour la production d'énergie propre. Cependant, ils font face à plusieurs défis qui rendent peu probable qu'ils soient une solution viable à court terme:<br><br><b>Coûts élevés:</b> Malgré leur taille plus petite, les SMR nécessitent toujours des coûts d'investissement initiaux importants pour le développement, l'octroi de licences et la construction. Les économies d'échelle qui profitent aux réacteurs plus grands ne sont pas aussi applicables aux SMR, ce qui les rend relativement plus coûteux par unité d'énergie produite<br><br><b>Préoccupations en matière de sécurité:</b> Bien que les SMR intègrent des fonctionnalités de sécurité avancées, l'industrie nucléaire fait toujours face à des défis de perception du public concernant la sécurité et l'élimination des déchets. Tout accident ou incident de sécurité, même à plus petite échelle, pourrait faire reculer l'acceptation publique de l'énergie nucléaire<br><br><b>Obstacles réglementaires:</b> Les SMR devraient passer par des approbations réglementaires et de licences étendues avant de pouvoir être largement déployés. Le cadre réglementaire actuel est orienté vers des conceptions de réacteurs traditionnels plus grands, et l'adapter pour les SMR pourrait être un processus long et complexe<br><br><b>Concurrence des énergies renouvelables:</b> Dans le temps qu'il faut pour développer et déployer des SMR à grande échelle, les technologies d'énergie renouvelable comme le solaire et l'éolien deviennent de plus en plus compétitives en termes de coûts et répandues. Les énergies renouvelables ont l'avantage de délais de déploiement plus rapides, de risques perçus plus faibles et d'une plus grande acceptation du public<br><br>Bien que les SMR offrent certains avantages potentiels, ils font face à des défis économiques, réglementaires et de perception du public importants qui rendent peu probable qu'ils soient une solution climatique majeure à court terme par rapport à l'expansion rapide des technologies d'énergie renouvelable.",
+                    "source": "Source",
+                    "footer-made-by": "Créé par",
+                    "footer-contribute": "N'hésitez pas à faire un fork, des modifications et une demande de fusion. Ou ouvrez un problème si vous constatez que certains de ces textes sont incorrects."
+                },
+                es: {
+                    "header-title": "¡La energía nuclear no es la solución!",
+                    "card1-title": "❌ La energía nuclear es barata",
+                    "card1-content": "La energía nuclear a menudo se promociona como una fuente barata de electricidad, pero esto es un mito. En realidad, la energía nuclear es una de las formas más caras de generar electricidad. Aquí hay algunas razones:<br><br><b>Altos costos de construcción:</b> Construir una central nuclear es extremadamente caro, a menudo costando miles de millones de dólares. Estos altos costos iniciales hacen que la energía nuclear sea menos viable económicamente en comparación con otras fuentes de energía<br><br><b>Largos tiempos de construcción:</b> Los reactores nucleares tardan mucho tiempo en construirse, a menudo más de una década. Esto significa que el costo de financiar el proyecto se acumula con el tiempo, haciendo que el costo final sea aún mayor<br><br><b>Costos de desmantelamiento:</b> Cuando una central nuclear llega al final de su vida útil, necesita ser desmantelada. Este proceso también es muy costoso y puede costar cientos de millones de dólares<br><br><b>Costos de combustible:</b> Si bien el combustible de uranio es relativamente barato en comparación con los combustibles fósiles, el proceso de enriquecimiento y fabricación del combustible es costoso<br><br><b>Costos de seguridad y protección:</b> Las centrales nucleares requieren altos niveles de seguridad y protección, lo que aumenta el costo general de operar la planta<br><br>En conclusión, si bien la energía nuclear puede parecer una opción barata a primera vista, los altos costos de construcción, desmantelamiento, combustible y seguridad la convierten en una de las formas más caras de generar electricidad. Un informe de 2019 del Instituto Alemán de Investigación Económica (DIW) encontró que la energía nuclear es la forma más cara de generar electricidad cuando se consideran todos los costos",
+                    "card2-title": "❌ La energía nuclear es confiable",
+                    "card2-content": "La energía nuclear a menudo se promociona como una fuente confiable de energía, pero eventos recientes han demostrado que esto es un mito. En el verano de 2022, Francia tuvo que cerrar muchos de sus reactores nucleares debido a la falta de agua de enfriamiento causada por el calor extremo y la sequía. Como resultado, Francia tuvo que importar electricidad de países vecinos como Alemania para satisfacer sus necesidades energéticas<br><br>Este incidente destaca la vulnerabilidad de las centrales nucleares al cambio climático y eventos climáticos extremos. Los reactores nucleares requieren un suministro constante de agua para enfriamiento, y cuando esto se interrumpe, los reactores deben cerrarse por razones de seguridad. Esto puede llevar a escasez de energía e inestabilidad en la red eléctrica.<br><br>Además, los altos costos y los largos tiempos de construcción de las centrales nucleares las hacen menos flexibles que otras fuentes de energía para responder a las demandas energéticas cambiantes",
+                    "card3-title": "❌ La energía nuclear es eficiente",
+                    "card3-content": "La eficiencia de los reactores nucleares en la conversión de calor en electricidad es de alrededor del 33%, que es menor que algunos otros métodos de generación de energía<br>Esto significa que se pierde una cantidad significativa de energía como calor residual.",
+                    "card4-title": "❌ La energía nuclear significa independencia energética",
+                    "card4-content": "El mito de que la energía nuclear significa independencia energética es incorrecto por varias razones:<br>El combustible nuclear no está ampliamente disponible. La mayoría de los países dependen de las importaciones de uranio para alimentar sus reactores, lo que significa que todavía dependen de otras naciones (en Europa esto significa a menudo Rusia o aliados rusos) para su suministro de energía<br><br>Las centrales nucleares son complejas y costosas de construir y mantener. Muchos países carecen de la experiencia técnica y los recursos financieros para desarrollar una industria nuclear nacional, lo que los hace dependientes de empresas e inversores extranjeros<br><br>Los accidentes y ataques nucleares pueden interrumpir el suministro de energía. Como se vio con los ataques a las centrales nucleares ucranianas, las instalaciones nucleares son objetivos vulnerables que pueden causar daños generalizados e interrumpir la generación de energía",
+                    "card5-title": "❌ La energía nuclear significa seguridad",
+                    "card5-content": "La energía nuclear a menudo se presenta como una alternativa segura y limpia a los combustibles fósiles, pero este mito está lejos de la verdad. Uno de los peligros más significativos de las centrales nucleares es su vulnerabilidad en tiempos de guerra. Las instalaciones nucleares pueden convertirse en objetivos de ataques militares, lo que lleva a consecuencias catastróficas<br><br>En el caso de que una central nuclear sea alcanzada por un misil o bomba, el daño podría causar una fusión del núcleo, liberando material radiactivo al medio ambiente. Esto tendría efectos devastadores en la salud humana y el ecosistema durante generaciones<br><br>Además, el mito de la seguridad nuclear se ha perpetuado desde los primeros días de la tecnología nuclear. Los gobiernos a menudo han ocultado sus intenciones de desarrollar armas nucleares mientras promueven el \"uso pacífico de la energía nuclear\"<br><br>Esto ha llevado a una comprensión dicotómica de los usos buenos y malos de la energía nuclear, con los peligros minimizados<br><br>La guerra actual en Ucrania también ha destacado los riesgos de depender de la energía nuclear. Los países dependientes de la energía nuclear ahora enfrentan preocupaciones de seguridad energética, ya que el conflicto amenaza el suministro de combustible y recursos necesarios para operar estas plantas",
+                    "card6-title": "❌ Los residuos nucleares son un problema resuelto",
+                    "card6-content": "El mito de que los residuos nucleares son un problema resuelto es incorrecto por varias razones:<br><br><b>Desafíos de almacenamiento a largo plazo:</b> Los desechos radiactivos de alto nivel permanecen peligrosos durante miles de años, y encontrar soluciones de almacenamiento seguras a largo plazo es un desafío continuo. Incluso la Planta Piloto de Aislamiento de Residuos (WIPP), el único repositorio subterráneo de residuos nucleares en los EE. UU., ha experimentado accidentes que llevaron a liberaciones radiológicas y contaminación<br><br><b>Percepción y aceptación pública:</b> A pesar de algunos progresos en la gestión de residuos nucleares, la preocupación pública sobre la contaminación y la contaminación ambiental de la energía nuclear sigue siendo alta. Un estudio encontró que si bien muchas personas perciben la energía nuclear como una solución potencial al cambio climático, todavía están preocupadas por los riesgos asociados con los residuos nucleares<br><br><b>Riesgos de proliferación:</b> La presencia de residuos nucleares plantea preocupaciones sobre el potencial de proliferación de armas nucleares. Garantizar salvaguardias confiables y prevenir la creación de bombas caseras utilizando materiales de desechos nucleares es un desafío continuo<br><br><b>Soluciones de reciclaje incompletas:</b> Si bien los avances en reactores de Generación IV y Reactores Modulares Pequeños (SMR) muestran promesas para mejorar la gestión y el reciclaje de residuos nucleares, estas tecnologías todavía están en desarrollo y aún no se implementan ampliamente<br><br><b>Mito de la eliminación segura:</b> La idea de que los desechos radiactivos de alto nivel pueden eliminarse fácil y seguramente es un mito. Los peligros asociados con estos desechos persisten durante períodos increíblemente largos, y no hay garantía de que los métodos de almacenamiento actuales permanezcan seguros indefinidamente<br><br>En conclusión, si bien se ha avanzado en la gestión de residuos nucleares, es inexacto afirmar que el problema está resuelto. Aún deben abordarse desafíos significativos relacionados con el almacenamiento a largo plazo, la aceptación pública, los riesgos de proliferación y el desarrollo de tecnologías de reciclaje avanzadas.",
+                    "card7-title": "❌ Los reactores pequeños son la solución",
+                    "card7-content": "Los pequeños reactores nucleares, también conocidos como reactores modulares pequeños (SMR), se han propuesto como una solución potencial para la generación de energía limpia. Sin embargo, enfrentan varios desafíos que hacen poco probable que sean una solución viable a corto plazo:<br><br><b>Altos costos:</b> A pesar de su tamaño más pequeño, los SMR aún requieren costos de capital iniciales significativos para desarrollo, licencias y construcción. Las economías de escala que benefician a los reactores más grandes no son tan aplicables a los SMR, lo que los hace relativamente más caros por unidad de energía producida<br><br><b>Preocupaciones de seguridad:</b> Si bien los SMR incorporan características de seguridad avanzadas, la industria nuclear aún enfrenta desafíos de percepción pública en torno a la seguridad y la eliminación de residuos. Cualquier accidente o incidente de seguridad, incluso a menor escala, podría retrasar la aceptación pública de la energía nuclear<br><br><b>Obstáculos regulatorios:</b> Los SMR necesitarían pasar por extensas aprobaciones de licencias y regulatorias antes de que puedan implementarse ampliamente. El marco regulatorio actual está orientado hacia diseños de reactores tradicionales más grandes, y adaptarlo para SMR podría ser un proceso largo y complejo<br><br><b>Competencia de las renovables:</b> En el tiempo que lleva desarrollar e implementar SMR a escala, las tecnologías de energía renovable como la solar y la eólica se están volviendo cada vez más competitivas en costos y generalizadas. Las renovables tienen la ventaja de tiempos de implementación más rápidos, riesgos percibidos más bajos y mayor aceptación pública<br><br>Si bien los SMR ofrecen algunos beneficios potenciales, enfrentan desafíos económicos, regulatorios y de percepción pública significativos que los hacen poco probables de ser una solución climática importante a corto plazo en comparación con la expansión rápida de las tecnologías de energía renovable.",
+                    "source": "Fuente",
+                    "footer-made-by": "Creado por",
+                    "footer-contribute": "Puede hacer un fork, cambios y una solicitud de fusión. O abrir un problema si encuentra que algunos de estos textos son incorrectos."
+                }
+            };
 
-            </div>
-        </div>
+            // Get current language from localStorage or default to English
+            let currentLanguage = localStorage.getItem('preferred-language') || 'en';
+
+            // Function to change language
+            function changeLanguage(lang) {
+                currentLanguage = lang;
+                localStorage.setItem('preferred-language', lang);
+
+                // Update all elements with data-i18n attribute
+                document.querySelectorAll('[data-i18n]').forEach(element => {
+                    const key = element.getAttribute('data-i18n');
+                    if (translations[lang] && translations[lang][key]) {
+                        element.innerHTML = translations[lang][key];
+                    }
+                });
+
+                // Update document title
+                document.title = translations[lang]['header-title'];
+
+                // Update active button
+                document.querySelectorAll('.language-selector button').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                document.getElementById('lang-' + lang).classList.add('active');
+            }
+
+            // Apply saved language on page load
+            window.addEventListener('DOMContentLoaded', () => {
+                changeLanguage(currentLanguage);
+            });
+        </script>
     </body>
 </html>
